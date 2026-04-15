@@ -1,35 +1,142 @@
 [
-  {
-    "timestamp": "2026-04-15 12:26:59",
-    "updatedCount": 0,
-    "pluginCount": 4,
-    "results": [
-      {"plugin": "workshop-setup@workshop-setup", "updated": false, "fromVer": "1.0.0", "toVer": "1.0.0"},
-      {"plugin": "yahav-marketing@yahav-marketing", "updated": false, "fromVer": "1.0.0", "toVer": "1.0.0"},
-      {"plugin": "caveman@caveman", "updated": false, "fromVer": "63e797cd753b", "toVer": "63e797cd753b"},
-      {"plugin": "superpowers@superpowers-marketplace", "updated": false, "fromVer": "5.0.7", "toVer": "5.0.7"}
-    ]
-  },
-  {
-    "timestamp": "2026-04-15 12:28:10",
-    "updatedCount": 0,
-    "pluginCount": 4,
-    "results": [
-      {"plugin": "workshop-setup@workshop-setup", "updated": false, "fromVer": "1.0.0", "toVer": "1.0.0"},
-      {"plugin": "yahav-marketing@yahav-marketing", "updated": false, "fromVer": "1.0.0", "toVer": "1.0.0"},
-      {"plugin": "caveman@caveman", "updated": false, "fromVer": "63e797cd753b", "toVer": "63e797cd753b"},
-      {"plugin": "superpowers@superpowers-marketplace", "updated": false, "fromVer": "5.0.7", "toVer": "5.0.7"}
-    ]
-  },
-  {
-    "timestamp": "2026-04-15 19:26:05",
-    "updatedCount": 1,
-    "pluginCount": 4,
-    "results": [
-      {"plugin": "workshop-setup@workshop-setup", "updated": false, "fromVer": "1.0.0", "toVer": "1.0.0"},
-      {"plugin": "yahav-marketing@yahav-marketing", "updated": false, "fromVer": "1.0.0", "toVer": "1.0.0"},
-      {"plugin": "caveman@caveman", "updated": true, "fromVer": "63e797cd753b", "toVer": "c2ed24b3e5d4"},
-      {"plugin": "superpowers@superpowers-marketplace", "updated": false, "fromVer": "5.0.7", "toVer": "5.0.7"}
-    ]
-  }
+    {
+        "timestamp":  "2026-04-15 12:26:59",
+        "updatedCount":  0,
+        "pluginCount":  4,
+        "results":  [
+                        {
+                            "output":  "Checking for updates for plugin \"workshop-setup@workshop-setup\" at user scopeײ¾ג€׳³ֲײ²ֳ— ײ¾ג€ײ²ֲ£׳³ג‚× workshop-setup is already at the latest version (1.0.0).",
+                            "fromVer":  "1.0.0",
+                            "plugin":  "workshop-setup@workshop-setup",
+                            "toVer":  "1.0.0",
+                            "updated":  false
+                        },
+                        {
+                            "output":  "Checking for updates for plugin \"yahav-marketing@yahav-marketing\" at user scopeײ¾ג€׳³ֲײ²ֳ— ײ¾ג€ײ²ֲ£׳³ג‚× yahav-marketing is already at the latest version (1.0.0).",
+                            "fromVer":  "1.0.0",
+                            "plugin":  "yahav-marketing@yahav-marketing",
+                            "toVer":  "1.0.0",
+                            "updated":  false
+                        },
+                        {
+                            "output":  "Checking for updates for plugin \"caveman@caveman\" at user scopeײ¾ג€׳³ֲײ²ֳ— ײ¾ג€ײ²ֲ£׳³ג‚× caveman is already at the latest version (63e797cd753b).",
+                            "fromVer":  "63e797cd753b",
+                            "plugin":  "caveman@caveman",
+                            "toVer":  "63e797cd753b",
+                            "updated":  false
+                        },
+                        {
+                            "output":  "Checking for updates for plugin \"superpowers@superpowers-marketplace\" at user scopeײ¾ג€׳³ֲײ²ֳ— ײ¾ג€ײ²ֲ£׳³ג‚× superpowers is already at the latest version (5.0.7).",
+                            "fromVer":  "5.0.7",
+                            "plugin":  "superpowers@superpowers-marketplace",
+                            "toVer":  "5.0.7",
+                            "updated":  false
+                        }
+                    ]
+    },
+    {
+        "timestamp":  "2026-04-15 12:28:10",
+        "updatedCount":  0,
+        "pluginCount":  4,
+        "results":  [
+                        {
+                            "output":  "Checking for updates for plugin \"workshop-setup@workshop-setup\" at user scopeײ¾ג€׳³ֲײ²ֳ— ײ¾ג€ײ²ֲ£׳³ג‚× workshop-setup is already at the latest version (1.0.0).",
+                            "fromVer":  "1.0.0",
+                            "plugin":  "workshop-setup@workshop-setup",
+                            "toVer":  "1.0.0",
+                            "updated":  false
+                        },
+                        {
+                            "output":  "Checking for updates for plugin \"yahav-marketing@yahav-marketing\" at user scopeײ¾ג€׳³ֲײ²ֳ— ײ¾ג€ײ²ֲ£׳³ג‚× yahav-marketing is already at the latest version (1.0.0).",
+                            "fromVer":  "1.0.0",
+                            "plugin":  "yahav-marketing@yahav-marketing",
+                            "toVer":  "1.0.0",
+                            "updated":  false
+                        },
+                        {
+                            "output":  "Checking for updates for plugin \"caveman@caveman\" at user scopeײ¾ג€׳³ֲײ²ֳ— ײ¾ג€ײ²ֲ£׳³ג‚× caveman is already at the latest version (63e797cd753b).",
+                            "fromVer":  "63e797cd753b",
+                            "plugin":  "caveman@caveman",
+                            "toVer":  "63e797cd753b",
+                            "updated":  false
+                        },
+                        {
+                            "output":  "Checking for updates for plugin \"superpowers@superpowers-marketplace\" at user scopeײ¾ג€׳³ֲײ²ֳ— ײ¾ג€ײ²ֲ£׳³ג‚× superpowers is already at the latest version (5.0.7).",
+                            "fromVer":  "5.0.7",
+                            "plugin":  "superpowers@superpowers-marketplace",
+                            "toVer":  "5.0.7",
+                            "updated":  false
+                        }
+                    ]
+    },
+    {
+        "timestamp":  "2026-04-15 19:26:05",
+        "updatedCount":  5,
+        "pluginCount":  4,
+        "results":  [
+                        {
+                            "output":  "Checking for updates for plugin \"workshop-setup@workshop-setup\" at user scope־“׳ֲ× ־“ֲ£׳₪ workshop-setup is already at the latest version (1.0.0).",
+                            "fromVer":  "1.0.0",
+                            "plugin":  "workshop-setup@workshop-setup",
+                            "toVer":  "1.0.0",
+                            "updated":  false
+                        },
+                        {
+                            "output":  "Checking for updates for plugin \"yahav-marketing@yahav-marketing\" at user scope־“׳ֲ× ־“ֲ£׳₪ yahav-marketing is already at the latest version (1.0.0).",
+                            "fromVer":  "1.0.0",
+                            "plugin":  "yahav-marketing@yahav-marketing",
+                            "toVer":  "1.0.0",
+                            "updated":  false
+                        },
+                        {
+                            "output":  "Checking for updates for plugin \"caveman@caveman\" at user scope־“׳ֲ× ־“ֲ£׳₪ Plugin \"caveman\" updated from 63e797cd753b to c2ed24b3e5d4 for scope user. Restart to apply changes.",
+                            "fromVer":  "63e797cd753b",
+                            "plugin":  "caveman@caveman",
+                            "toVer":  "c2ed24b3e5d4",
+                            "updated":  true
+                        },
+                        {
+                            "output":  "Checking for updates for plugin \"superpowers@superpowers-marketplace\" at user scope־“׳ֲ× ־“ֲ£׳₪ superpowers is already at the latest version (5.0.7).",
+                            "fromVer":  "5.0.7",
+                            "plugin":  "superpowers@superpowers-marketplace",
+                            "toVer":  "5.0.7",
+                            "updated":  false
+                        }
+                    ]
+    },
+    {
+        "timestamp":  "2026-04-15 23:45:43",
+        "updatedCount":  0,
+        "pluginCount":  4,
+        "results":  [
+                        {
+                            "output":  "Checking for updates for plugin \"workshop-setup@workshop-setup\" at user scopeΓאª Γ£פ workshop-setup is already at the latest version (1.0.0).",
+                            "fromVer":  "1.0.0",
+                            "plugin":  "workshop-setup@workshop-setup",
+                            "toVer":  "1.0.0",
+                            "updated":  false
+                        },
+                        {
+                            "output":  "Checking for updates for plugin \"yahav-marketing@yahav-marketing\" at user scopeΓאª Γ£פ yahav-marketing is already at the latest version (1.0.0).",
+                            "fromVer":  "1.0.0",
+                            "plugin":  "yahav-marketing@yahav-marketing",
+                            "toVer":  "1.0.0",
+                            "updated":  false
+                        },
+                        {
+                            "output":  "Checking for updates for plugin \"caveman@caveman\" at user scopeΓאª Γ£פ caveman is already at the latest version (c2ed24b3e5d4).",
+                            "fromVer":  "c2ed24b3e5d4",
+                            "plugin":  "caveman@caveman",
+                            "toVer":  "c2ed24b3e5d4",
+                            "updated":  false
+                        },
+                        {
+                            "output":  "Checking for updates for plugin \"superpowers@superpowers-marketplace\" at user scopeΓאª Γ£פ superpowers is already at the latest version (5.0.7).",
+                            "fromVer":  "5.0.7",
+                            "plugin":  "superpowers@superpowers-marketplace",
+                            "toVer":  "5.0.7",
+                            "updated":  false
+                        }
+                    ]
+    }
 ]
