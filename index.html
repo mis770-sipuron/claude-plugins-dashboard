@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Plugins — Update Dashboard</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Tahoma,sans-serif;background:#0f0f13;color:#e0e0e0;padding:24px;min-height:100vh}
+.container{max-width:900px;margin:0 auto}
+h1{color:#c4a0ff;margin-bottom:8px;font-size:1.8em}
+.subtitle{color:#888;margin-bottom:32px;font-size:.95em}
+.stats{display:flex;gap:16px;margin-bottom:32px;flex-wrap:wrap}
+.stat-card{background:#1a1a24;border:1px solid #2a2a3a;border-radius:12px;padding:20px 28px;min-width:160px;flex:1}
+.stat-card .label{color:#888;font-size:.85em;margin-bottom:4px}
+.stat-card .value{font-size:2em;font-weight:700}
+.stat-card .value.purple{color:#c4a0ff}
+.stat-card .value.green{color:#4ade80}
+.stat-card .value.gray{color:#aaa}
+.run-card{background:#1a1a24;border:1px solid #2a2a3a;border-radius:12px;margin-bottom:12px;overflow:hidden}
+.run-header{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;cursor:pointer;transition:background .15s}
+.run-header:hover{background:#22222e}
+.run-date{font-weight:600;font-size:1.05em}
+.run-badge{padding:4px 12px;border-radius:20px;font-size:.8em;font-weight:600}
+.badge-updated{background:#14532d;color:#4ade80}
+.badge-clean{background:#1a1a2e;color:#888}
+.run-details{display:none;border-top:1px solid #2a2a3a;padding:16px 24px}
+.run-card.open .run-details{display:block}
+table{width:100%;border-collapse:collapse}
+th{text-align:right;color:#888;font-size:.8em;padding:8px 12px;border-bottom:1px solid #2a2a3a}
+td{padding:10px 12px;border-bottom:1px solid #1a1a2a;font-size:.9em}
+.chip{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8em;font-weight:600}
+.chip-yes{background:#14532d;color:#4ade80}
+.chip-no{background:#1a1a2e;color:#666}
+.version{font-family:'Cascadia Code','Consolas',monospace;font-size:.85em;color:#aaa}
+.arrow{color:#c4a0ff;margin:0 6px}
+.footer{color:#333;font-size:.75em;margin-top:32px;text-align:center}
+.footer a{color:#555}
+@media(max-width:600px){
+  body{padding:16px}
+  .stats{flex-direction:column}
+  .stat-card{min-width:auto}
+  .run-header{padding:12px 16px;flex-wrap:wrap;gap:8px}
+  .run-details{padding:12px 16px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Claude Plugins Updates</h1>
+<p class="subtitle">מעקב אחרי עדכוני פלאגינים — כל יום ראשון 12:00</p>
+<div id="stats" class="stats"></div>
+<div id="runs"></div>
+<p class="footer">Auto-updated by <a href="https://github.com/mis770-sipuron/claude-plugins-dashboard">claude-plugins-dashboard</a></p>
+</div>
+<script>
+fetch('data.json').then(r=>r.json()).then(function(DATA){
+  var history=(Array.isArray(DATA)?DATA:[DATA]).sort(function(a,b){return b.timestamp.localeCompare(a.timestamp)});
+  var totalRuns=history.length;
+  var totalUpdates=history.reduce(function(s,r){return s+(r.updatedCount||0)},0);
+  var lastRun=history[0]?history[0].timestamp:'\u2014';
+  var pluginSet={};
+  history.forEach(function(r){(r.results||[]).forEach(function(p){pluginSet[p.plugin]=1})});
+  var pluginCount=Object.keys(pluginSet).length;
+  document.getElementById('stats').innerHTML=
+    '<div class="stat-card"><div class="label">\u05D4\u05E8\u05E6\u05D5\u05EA</div><div class="value purple">'+totalRuns+'</div></div>'+
+    '<div class="stat-card"><div class="label">\u05E2\u05D3\u05DB\u05D5\u05E0\u05D9\u05DD \u05E9\u05D1\u05D5\u05E6\u05E2\u05D5</div><div class="value green">'+totalUpdates+'</div></div>'+
+    '<div class="stat-card"><div class="label">\u05E4\u05DC\u05D0\u05D2\u05D9\u05E0\u05D9\u05DD \u05D1\u05DE\u05E2\u05E7\u05D1</div><div class="value gray">'+pluginCount+'</div></div>'+
+    '<div class="stat-card"><div class="label">\u05D4\u05E8\u05E6\u05D4 \u05D0\u05D7\u05E8\u05D5\u05E0\u05D4</div><div class="value gray" style="font-size:1em">'+lastRun+'</div></div>';
+  document.getElementById('runs').innerHTML=history.map(function(run){
+    var hasUpdates=run.updatedCount>0;
+    var badgeClass=hasUpdates?'badge-updated':'badge-clean';
+    var badgeText=hasUpdates?run.updatedCount+' \u05E2\u05D3\u05DB\u05D5\u05E0\u05D9\u05DD':'\u05D4\u05DB\u05DC \u05DE\u05E2\u05D5\u05D3\u05DB\u05DF';
+    var rows=(run.results||[]).map(function(r){
+      var chipClass=r.updated?'chip-yes':'chip-no';
+      var chipText=r.updated?'\u05E2\u05D5\u05D3\u05DB\u05DF':'\u05DE\u05E2\u05D5\u05D3\u05DB\u05DF';
+      var name=r.plugin.split('@')[0];
+      var ver=r.updated?'<span class="version">'+r.fromVer+'</span><span class="arrow">&larr;</span><span class="version">'+r.toVer+'</span>':'<span class="version">'+(r.fromVer||'\u2014')+'</span>';
+      return '<tr><td>'+name+'</td><td><span class="chip '+chipClass+'">'+chipText+'</span></td><td>'+ver+'</td></tr>';
+    }).join('');
+    return '<div class="run-card" onclick="this.classList.toggle(\'open\')"><div class="run-header"><span class="run-date">'+run.timestamp+'</span><span class="run-badge '+badgeClass+'">'+badgeText+'</span></div><div class="run-details"><table><thead><tr><th>\u05E4\u05DC\u05D0\u05D2\u05D9\u05DF</th><th>\u05E1\u05D8\u05D8\u05D5\u05E1</th><th>\u05D2\u05E8\u05E1\u05D4</th></tr></thead><tbody>'+rows+'</tbody></table></div></div>';
+  }).join('');
+}).catch(function(){
+  document.getElementById('runs').innerHTML='<div style="text-align:center;padding:64px;color:#555">שגיאה בטעינת נתונים</div>';
+});
+</script>
+</body>
+</html>
